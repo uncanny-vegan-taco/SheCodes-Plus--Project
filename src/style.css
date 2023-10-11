@@ -7,7 +7,9 @@ h1 {
 h2 {
   text-align: center;
 }
-
+form {
+  height: 60px;
+}
 .container {
   width: 500px;
   background-color: rgba(139, 148, 155, 0.685);
@@ -20,31 +22,26 @@ h2 {
   left: 34%;
 }
 .container input {
-  width: 90%;
+  width: 100%;
   margin-bottom: 20px;
   background-color: transparent;
   color: white;
 }
+
 .btn {
   background-color: transparent;
 }
 .btn:hover {
   background-color: #212529;
 }
-#search-button.btn {
-  position: relative;
-  right: 40px;
-}
-#current-button.btn {
-  position: relative;
-  left: 48px;
-  bottom: 38px;
+.col-sm-8 {
+  width: 60%;
 }
 .fa-solid.fa-cloud-showers-heavy {
   color: #212529;
   scale: 11;
   position: relative;
-  top: 100px;
+  top: 95px;
   left: 85px;
 }
 .main-temp {

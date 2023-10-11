@@ -21,99 +21,116 @@
     <img id="background" src="media/leafrain.gif" />
     <div class="container">
       <div class="row">
-        <div class="col-sm-8">
-          <input
-            type="text"
-            class="form-control"
-            id="city-input"
-            placeholder="city,state,country code"
-          />
-        </div>
-        <div class="col-4">
-          <button type="submit" class="btn btn-secondary" id="search-button">
-            Search
-          </button>
-          <button type="submit" class="btn btn-secondary" id="current-button">
-            Current
-          </button>
-        </div>
+        <form id="search-form">
+          <div class="row">
+            <div class="col-sm-8">
+              <input
+                type="text"
+                class="form-control"
+                id="city-input"
+                placeholder="city,state,country code"
+                autocomplete="off"
+              />
+            </div>
+            <div class="col-2">
+              <button
+                type="submit"
+                class="btn btn-secondary"
+                id="search-button"
+              >
+                Search
+              </button>
+            </div>
+            <div class="col-2">
+              <button
+                type="submit"
+                class="btn btn-secondary"
+                id="current-button"
+              >
+                Current
+              </button>
+            </div>
+          </div>
+        </form>
         <div class="col-12">
           <h1 id="city">Seattle, WA</h1>
         </div>
-        <div class="row"></div>
-        <div class="col-6">
-          <i class="fa-solid fa-cloud-showers-heavy"></i>
+        <div class="row">
+          <div class="col-6">
+            <i class="fa-solid fa-cloud-showers-heavy"></i>
+          </div>
+          <div class="col-6 main-temp">
+            <p id="date-time"></p>
+            <h1 id="temp">57&deg;F</h1>
+            <span class="change-degrees"
+              ><a href="#" class="c-link">C&deg;/</a
+              ><a href="#" class="f-link">F&deg;</a></span
+            >
+          </div>
+          <div class="col-6">
+            <p>
+              <span id="precipitation">Precipitation: .35" </span><br />
+              <span id="humidity">Humidity: 85% </span><br />
+              <span id="aqi">AQI: 42 - Good</span>
+            </p>
+          </div>
+          <div class="col-6">
+            <h2 class="description">
+              <span class="high-low-main">H: 60&deg; L: 51&deg;</span> <br />
+              <span class="feels-like">Feels like: 56&deg;</span>
+            </h2>
+          </div>
+          <div class="col">
+            <i class="fa-solid fa-cloud"></i>
+            <p>
+              H: 60&deg; <br />
+              L: 50&deg;
+            </p>
+          </div>
+          <div class="col">
+            <i class="fa-solid fa-cloud-bolt"></i>
+            <p>
+              H: 60&deg; <br />
+              L: 50&deg;
+            </p>
+          </div>
+          <div class="col">
+            <i class="fa-solid fa-wind"></i>
+            <p>
+              H: 60&deg; <br />
+              L: 50&deg;
+            </p>
+          </div>
+          <div class="col">
+            <i class="fa-solid fa-cloud-rain"></i>
+            <p>
+              H: 60&deg; <br />
+              L: 50&deg;
+            </p>
+          </div>
+          <div class="col">
+            <i class="fa-solid fa-cloud-sun-rain"></i>
+            <p>
+              H: 60&deg; <br />
+              L: 50&deg;
+            </p>
+          </div>
         </div>
-        <div class="col-6 main-temp">
-          <p id="date-time"></p>
-          <h1 id="temp">57&deg;F</h1>
-          <span class="change-degrees"
-            ><a href="#" class="c-link">C&deg;/</a
-            ><a href="#" class="f-link">F&deg;</a></span
-          >
-        </div>
-        <div class="col-6">
-          <p>
-            <span id="precipitation">Precipitation: .35" </span><br />
-            <span id="humidity">Humidity: 85% </span><br />
-            <span id="aqi">AQI: 42 - Good</span>
-          </p>
-        </div>
-        <div class="col-6">
-          <h2 class="description">
-            <span class="high-low-main">H: 60&deg; L: 51&deg;</span> <br />
-            <span class="feels-like">Feels like: 56&deg;</span>
-          </h2>
-        </div>
-        <div class="col">
-          <i class="fa-solid fa-cloud"></i>
-          <p>
-            H: 60&deg; <br />
-            L: 50&deg;
-          </p>
-        </div>
-        <div class="col">
-          <i class="fa-solid fa-cloud-bolt"></i>
-          <p>
-            H: 60&deg; <br />
-            L: 50&deg;
-          </p>
-        </div>
-        <div class="col">
-          <i class="fa-solid fa-wind"></i>
-          <p>
-            H: 60&deg; <br />
-            L: 50&deg;
-          </p>
-        </div>
-        <div class="col">
-          <i class="fa-solid fa-cloud-rain"></i>
-          <p>
-            H: 60&deg; <br />
-            L: 50&deg;
-          </p>
-        </div>
-        <div class="col">
-          <i class="fa-solid fa-cloud-sun-rain"></i>
-          <p>
-            H: 60&deg; <br />
-            L: 50&deg;
-          </p>
+        <div class="row">
+          <div class="col-12">
+            <p>
+              <a
+                href="https://github.com/uncanny-vegan-taco/SheCodes-Plus--Project"
+                target="_blank"
+                >Open Source Code
+              </a>
+              by Kyli White
+            </p>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12">
-          <p>
-            <a
-              href="https://github.com/uncanny-vegan-taco/SheCodes-Plus--Project"
-              >Open Source Code
-            </a>
-            by Kyli White
-          </p>
-        </div>
-      </div>
-    </div>
 
-    <script src="src/script.js"></script>
+      <script src="src/script.js"></script>
+    </div>
   </body>
 </html>
