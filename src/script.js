@@ -116,4 +116,4 @@ let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getLocation);
 
 showDate();
-defaultWeather("Seattle");
+changeCity("Seattle");
