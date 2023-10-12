@@ -84,6 +84,7 @@ form {
   position: relative;
   bottom: 55px;
 }
+
 .description {
   line-height: 40px;
   margin-bottom: 20px;
@@ -108,4 +109,7 @@ form {
   font-size: 1.6em;
   margin-top: 10px;
   text-align: center;
+}
+#aqi {
+  font-size: 0.95em;
 }
