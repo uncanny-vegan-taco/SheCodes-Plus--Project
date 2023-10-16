@@ -44,7 +44,7 @@ function showTemp(response) {
   //  .querySelector("icon-image")
   //  .setAttribute(
   //    "src",
-  //    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@${response.data.weather[0].id}.png`
+  //    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   //  );
   fahrenheitTemperature = Math.round(response.data.main.temp);
   highTemperature = Math.round(response.data.main.temp_max);
@@ -57,7 +57,7 @@ function defaultWeather(response) {
   //  .querySelector("icon-image")
   //  .setAttribute(
   //    "src",
-  //    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@${response.data.weather[0].id}.png`
+  //    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   //  );
 
   document.querySelector("#city").innerHTML = response.data.name;
