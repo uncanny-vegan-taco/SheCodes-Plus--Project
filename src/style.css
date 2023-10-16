@@ -13,13 +13,11 @@ form {
 .container {
   width: 500px;
   background-color: rgba(139, 148, 155, 0.685);
-  padding-top: 20px;
-  padding-left: 25px;
-  margin: 0 auto;
-  margin-top: 175px;
+  padding: 20px;
   border-radius: 15px;
   position: fixed;
-  left: 34%;
+  top: 15%;
+  left: 35%;
 }
 .container input {
   width: 100%;
@@ -35,14 +33,7 @@ form {
   background-color: #212529;
 }
 .col-sm-8 {
-  width: 60%;
-}
-.fa-solid.fa-cloud-showers-heavy {
-  color: #212529;
-  scale: 11;
-  position: relative;
-  top: 95px;
-  left: 85px;
+  width: 62%;
 }
 .main-temp {
   margin-top: 0px;
@@ -51,16 +42,15 @@ form {
   font-size: 6em;
 }
 .col-6 p {
-  margin-top: 0px;
-  margin-left: 20px;
-  font-size: 1.2em;
+  text-align: center;
+  font-size: 1.3em;
   line-height: 30px;
 }
 .change-degrees {
-  font-size: 1.2em;
+  font-size: 1em;
   position: relative;
-  left: 175px;
-  bottom: 100px;
+  left: 150px;
+  bottom: 115px;
 }
 .f-link,
 .c-link {
@@ -89,11 +79,10 @@ form {
 }
 .fa-solid {
   scale: 1.6;
-  margin-left: 10px;
-  margin-bottom: 8px;
+  text-align: center;
 }
 .col {
-  margin-top: 20px;
+  text-align: center;
 }
 #background {
   position: fixed;
@@ -107,6 +96,6 @@ form {
   margin-top: 10px;
   text-align: center;
 }
-#aqi {
+#wind {
   font-size: 0.95em;
 }
