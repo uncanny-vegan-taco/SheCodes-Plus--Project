@@ -19,10 +19,19 @@ function showDate() {
   document.querySelector("#date-time").innerHTML = `${day}, ${hour}:${minute}`;
 }
 function showTemp(response) {
+  console.log(response);
+  //document
+  //  .querySelector("icon-image")
+  //  .setAttribute(
+  //    "src",
+  //    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  //  );
+
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temp").innerHTML = Math.round(
     response.data.main.temp
   );
+
   document.querySelector(".feels-like").innerHTML = Math.round(
     response.data.main.feels_like
   );
@@ -43,10 +52,15 @@ function showTemp(response) {
   lowTemperature = Math.round(response.data.main.temp_min);
   feelsLikeTemperature = Math.round(response.data.main.feels_like);
   windSpeed = Math.round(response.data.wind.speed);
-
-  console.log(response);
 }
 function defaultWeather(response) {
+  //document
+  //  .querySelector("icon-image")
+  //  .setAttribute(
+  //    "src",
+  //    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  //  );
+
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temp").innerHTML = Math.round(
     response.data.main.temp
@@ -108,7 +122,7 @@ function toCelcius(event) {
   let newTemp = Math.round((fahrenheitTemperature - 32) * (5 / 9));
   let newHigh = Math.round((highTemperature - 32) * (5 / 9));
   let newLow = Math.round((lowTemperature - 32) * (5 / 9));
-  let newFeelsLike = (feelsLikeTemperature - 32) * (5 / 9);
+  let newFeelsLike = Math.round((feelsLikeTemperature - 32) * (5 / 9));
   let newWindSpeed = Math.round(windSpeed * 1.60934);
 
   display.innerHTML = newTemp;
