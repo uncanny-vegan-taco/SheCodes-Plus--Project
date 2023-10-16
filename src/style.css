@@ -48,9 +48,7 @@ form {
   margin-top: 0px;
 }
 .main-temp h1 {
-  font-size: 6.5em;
-  position: relative;
-  bottom: 20px;
+  font-size: 6em;
 }
 .col-6 p {
   margin-top: 0px;
@@ -60,10 +58,9 @@ form {
 }
 .change-degrees {
   font-size: 1.2em;
-  margin-left: 70px;
   position: relative;
-  bottom: 35px;
-  left: 15px;
+  left: 175px;
+  bottom: 100px;
 }
 .f-link,
 .c-link {
@@ -79,8 +76,8 @@ form {
   position: relative;
   bottom: 60px;
 }
-.feels-like {
-  font-size: 1.1em;
+.feels-like-text {
+  font-size: 1em;
   position: relative;
   bottom: 55px;
 }

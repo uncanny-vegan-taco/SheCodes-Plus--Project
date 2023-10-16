@@ -19,52 +19,55 @@ function showDate() {
   document.querySelector("#date-time").innerHTML = `${day}, ${hour}:${minute}`;
 }
 function showTemp(response) {
-  let highTemp = Math.round(response.data.main.temp_max);
-  let lowTemp = Math.round(response.data.main.temp_min);
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temp").innerHTML =
-    Math.round(response.data.main.temp) + "°";
-  document.querySelector(".feels-like").innerHTML =
-    "Feels Like: " + Math.round(response.data.main.feels_like) + "°";
-  document.querySelector(
-    ".high-low-main"
-  ).innerHTML = `H: ${highTemp}° L: ${lowTemp}°`;
-  document.querySelector(
-    "#humidity"
-  ).innerHTML = `Humidity: ${response.data.main.humidity}%`;
-  document.querySelector(
-    "#precipitation"
-  ).innerHTML = `Precipitation: ${response.data.weather[0].main}`;
-  document.querySelector("#aqi").innerHTML =
-    "Wind Speed: " + Math.round(response.data.wind.speed) + "mph";
+  document.querySelector("#temp").innerHTML = Math.round(
+    response.data.main.temp
+  );
+  document.querySelector(".feels-like").innerHTML = Math.round(
+    response.data.main.feels_like
+  );
+  document.querySelector("#high-temp").innerHTML = Math.round(
+    response.data.main.temp_max
+  );
+  document.querySelector("#low-temp").innerHTML = Math.round(
+    response.data.main.temp_min
+  );
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].main;
+  document.querySelector("#wind").innerHTML =
+    Math.round(response.data.wind.speed) + "mph";
 
   fahrenheitTemperature = Math.round(response.data.main.temp);
-  //highTemperature = Math.round(response.data.main.temp_max);
-  //lowTemperature = Math.round(response.data.main.temp_min);
-  //feelsLikeTemperature = Math.round(response.data.main.feels_like);
+  highTemperature = Math.round(response.data.main.temp_max);
+  lowTemperature = Math.round(response.data.main.temp_min);
+  feelsLikeTemperature = Math.round(response.data.main.feels_like);
+  windSpeed = Math.round(response.data.wind.speed);
 
   console.log(response);
 }
 function defaultWeather(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temp").innerHTML = Math.round(
-    `${response.data.main.temp}°`
+    response.data.main.temp
   );
 
   document.querySelector(".feels-like").innerHTML = Math.round(
-    `Feels Like: ${response.data.main.feels_like}°`
+    response.data.main.feels_like
   );
-  document.querySelector(
-    ".high-low-main"
-  ).innerHTML = `H: ${highTemp}° L: ${lowTemp}°`;
+  document.querySelector("#high-temp").innerHTML = Math.round(
+    response.data.main.temp_max
+  );
+  document.querySelector("#low-temp").innerHTML = Math.round(
+    response.data.main.temp_min
+  );
   document.querySelector(
     "#humidity"
   ).innerHTML = `Humidity: ${response.data.main.humidity}%`;
-  document.querySelector(
-    "#precipitation"
-  ).innerHTML = `Precipitation: ${response.data.weather[0].main}`;
-  document.querySelector("#aqi").innerHTML =
-    "Wind Speed: " + Math.round(response.data.wind.speed) + "mph";
+  document.querySelector("#description").innerHTML =
+    response.data.weather[0].main;
+  document.querySelector("#wind").innerHTML =
+    Math.round(response.data.wind.speed) + "mph";
 }
 function submitInfo(event) {
   event.preventDefault();
@@ -97,38 +100,43 @@ function changeCity(citySearch) {
 function toCelcius(event) {
   event.preventDefault();
   let display = document.querySelector("#temp");
-  //let highLow = document.querySelector("#high-temp");
-  //let low = document.querySelector("#low-temp");
-  //let feelsLike = document.querySelector(".feels-like");
+  let high = document.querySelector("#high-temp");
+  let low = document.querySelector("#low-temp");
+  let feelsLike = document.querySelector(".feels-like");
+  let wind = document.querySelector("#wind");
 
   let newTemp = Math.round((fahrenheitTemperature - 32) * (5 / 9));
-  //let newHigh = (highTemperature - 32) * (5 / 9);
-  //let newLow = (lowTemperature - 32) * (5 / 9);
-  //let newFeelsLike = (feelsLikeTemperature - 32) * (5 / 9);
+  let newHigh = Math.round((highTemperature - 32) * (5 / 9));
+  let newLow = Math.round((lowTemperature - 32) * (5 / 9));
+  let newFeelsLike = (feelsLikeTemperature - 32) * (5 / 9);
+  let newWindSpeed = Math.round(windSpeed * 1.60934);
 
   display.innerHTML = newTemp;
-  //high.innerHTML = newHigh;
-  //low.innerHTML = newLow;
-  //feelsLike.innerHTML = newFeelsLike;
+  high.innerHTML = newHigh;
+  low.innerHTML = newLow;
+  feelsLike.innerHTML = newFeelsLike;
+  wind.innerHTML = newWindSpeed + "kmph";
 }
 
 function toFahrenheit(event) {
   event.preventDefault();
   let display = document.querySelector("#temp");
-  //let high = document.querySelector("#high-temp");
-  //let low = document.querySelector("#low-temp");
-  //let feelsLike = document.querySelector(".feels-like");
-  //high, low, feels-like
-
+  let high = document.querySelector("#high-temp");
+  let low = document.querySelector("#low-temp");
+  let feelsLike = document.querySelector(".feels-like");
+  let wind = document.querySelector("#wind");
   display.innerHTML = Math.round(fahrenheitTemperature);
-  //high.innerHTML = Math.round(highTemperature);
-  //low.innerHTML = Math.round(lowTemperature);
-  //feelsLike.innerHTML = Math.round(feelsLikeTemperature);
+  high.innerHTML = Math.round(highTemperature);
+  low.innerHTML = Math.round(lowTemperature);
+  feelsLike.innerHTML = Math.round(feelsLikeTemperature);
+  wind.innerHTML = Math.round(windSpeed) + "mph";
 }
 
 let fahrenheitTemperature = null;
-//let highLowTemperature = null;
-//let feelsLikeTemperature = null;
+let highTemperature = null;
+let lowTemperature = null;
+let feelsLikeTemperature = null;
+let windSpeed = null;
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", submitInfo);

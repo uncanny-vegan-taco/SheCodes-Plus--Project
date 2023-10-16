@@ -63,24 +63,27 @@
             <p id="date-time"></p>
             <h1 id="temp"></h1>
             <span class="change-degrees"
-              ><a href="#" class="c-link">C</a> |
-              <a href="#" class="f-link">F</a></span
+              ><a href="#" class="f-link">F&deg;</a> |
+              <a href="#" class="c-link">C&deg;</a></span
             >
           </div>
           <div class="col-6 info">
             <p>
-              <span id="precipitation"></span><br />
-              <span id="humidity"></span><br />
-              <span id="aqi"></span>
+              <span id="description"></span><br />
+              Humidity: <span id="humidity"></span>%<br />
+              Wind Speed: <span id="wind"></span>
             </p>
           </div>
           <div class="col-6">
             <h2 class="description">
               <span class="high-low-main"
-                ></span
-              ></span>
+                >H: <span id="high-temp"></span>&deg; L:
+                <span id="low-temp"></span>&deg;</span
+              >
               <br />
-              <span class="feels-like"></span>
+              <div class="feels-like-text">
+                Feels Like: <span class="feels-like"></span>&deg;
+              </div>
             </h2>
           </div>
           <div class="col">
