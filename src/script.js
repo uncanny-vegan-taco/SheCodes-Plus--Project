@@ -20,12 +20,6 @@ function showDate() {
 }
 function showTemp(response) {
   console.log(response);
-  //document
-  //  .querySelector("icon-image")
-  //  .setAttribute(
-  //    "src",
-  //    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  //  );
 
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temp").innerHTML = Math.round(
@@ -46,7 +40,12 @@ function showTemp(response) {
     response.data.weather[0].main;
   document.querySelector("#wind").innerHTML =
     Math.round(response.data.wind.speed) + "mph";
-
+  document
+    .querySelector("icon-image")
+    .setAttribute(
+      "src",
+      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
   fahrenheitTemperature = Math.round(response.data.main.temp);
   highTemperature = Math.round(response.data.main.temp_max);
   lowTemperature = Math.round(response.data.main.temp_min);
@@ -54,12 +53,12 @@ function showTemp(response) {
   windSpeed = Math.round(response.data.wind.speed);
 }
 function defaultWeather(response) {
-  //document
-  //  .querySelector("icon-image")
-  //  .setAttribute(
-  //    "src",
-  //    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  //  );
+  document
+    .querySelector("icon-image")
+    .setAttribute(
+      "src",
+      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
 
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temp").innerHTML = Math.round(
