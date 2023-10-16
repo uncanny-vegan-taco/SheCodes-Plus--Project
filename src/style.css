@@ -10,7 +10,7 @@ h2 {
 form {
   height: 60px;
 }
-.container {
+.content {
   width: 500px;
   background-color: rgba(139, 148, 155, 0.685);
   padding: 20px;
@@ -19,13 +19,12 @@ form {
   top: 15%;
   left: 35%;
 }
-.container input {
+.content input {
   width: 100%;
   margin-bottom: 20px;
   background-color: transparent;
   color: white;
 }
-
 .btn {
   background-color: transparent;
 }
@@ -35,11 +34,16 @@ form {
 .col-sm-8 {
   width: 62%;
 }
-.main-temp {
-  margin-top: 0px;
+.subheader {
+  font-size: 1.6em;
+  text-align: center;
 }
+.main-temp {
+  line-height: 40px;
+}
+
 .main-temp h1 {
-  font-size: 6em;
+  font-size: 7em;
 }
 .col-6 p {
   text-align: center;
@@ -49,8 +53,8 @@ form {
 .change-degrees {
   font-size: 1em;
   position: relative;
-  left: 150px;
-  bottom: 115px;
+  left: 155px;
+  bottom: 140px;
 }
 .f-link,
 .c-link {
@@ -61,22 +65,24 @@ form {
 .c-link:focus {
   text-decoration: underline;
 }
+.col-6 {
+  height: 150px;
+}
+.col-12.other-temps {
+  text-align: center;
+}
 .high-low-main {
-  font-size: 0.8em;
-  position: relative;
-  bottom: 60px;
+  font-size: 1em;
 }
 .feels-like-text {
-  font-size: 1em;
-  position: relative;
-  bottom: 55px;
+  font-size: 1.3em;
+}
+.info {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 15px;
 }
 
-.description {
-  line-height: 40px;
-  margin-bottom: 20px;
-  margin-top: 25px;
-}
 .fa-solid {
   scale: 1.6;
   text-align: center;
@@ -84,18 +90,15 @@ form {
 .col {
   text-align: center;
 }
+.open-source {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
 #background {
   position: fixed;
   right: 0;
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
-}
-#date-time {
-  font-size: 1.6em;
-  margin-top: 10px;
-  text-align: center;
-}
-#wind {
-  font-size: 0.95em;
 }
