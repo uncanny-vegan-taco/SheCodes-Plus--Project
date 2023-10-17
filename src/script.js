@@ -18,6 +18,7 @@ function showDate() {
 
   document.querySelector("#date-time").innerHTML = `${day}, ${hour}:${minute}`;
 }
+
 function showTemp(response) {
   console.log(response.data);
 
@@ -51,7 +52,10 @@ function showTemp(response) {
   lowTemperature = Math.round(response.data.main.temp_min);
   feelsLikeTemperature = Math.round(response.data.main.feels_like);
   windSpeed = Math.round(response.data.wind.speed);
+
+  getForecast(response.data.coord);
 }
+
 function defaultWeather(response) {
   document
     .querySelector("#icon-image")
@@ -81,7 +85,10 @@ function defaultWeather(response) {
     response.data.weather[0].main;
   document.querySelector("#wind").innerHTML =
     Math.round(response.data.wind.speed) + "mph";
+
+  getForecast(response.data.coord);
 }
+
 function submitInfo(event) {
   event.preventDefault();
   let citySearch = document.querySelector("#city-input").value;
@@ -98,10 +105,12 @@ function showPosition(position) {
 
   axios.get(apiUrl).then(showTemp);
 }
+
 function getLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
 }
+
 function changeCity(citySearch) {
   let unit = "imperial";
   let apiKey = "f94ea25a0e5f5ee54c0ba93fee57f24d";
@@ -110,6 +119,40 @@ function changeCity(citySearch) {
   axios.get(apiUrl).then(showTemp);
 }
 
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML += `
+          <div class="col-2">
+            <img src="https://openweathermap.org/img/wn/${
+              forecastDay.weather[0].icon
+            }@2x.png" alt="" class="forecast-icon">
+            <div class="forecast-temps">
+              <span class="forecast-high">H: ${Math.round(
+                forecastDay.temp.max
+              )}&deg;</span> <br />
+              <span class="forecast-low">L: ${Math.round(
+                forecastDay.temp.min
+              )}&deg;</span>
+            </div>
+          </div>`;
+    }
+  });
+
+  forecastHTML = `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+function getForecast(coordinates) {
+  let apiKey = "6d68aadfacdd4f5163bc273049a0cf2d";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=imperial`;
+
+  axios.get(apiUrl).then(displayForecast);
+}
 function toCelcius(event) {
   event.preventDefault();
   let display = document.querySelector("#temp");

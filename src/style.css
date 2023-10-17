@@ -92,6 +92,10 @@ form {
 .col {
   text-align: center;
 }
+.weather-forecast {
+  text-align: center;
+  height: 50px;
+}
 .open-source {
   text-align: center;
   font-weight: bold;
