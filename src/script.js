@@ -17,6 +17,7 @@ function showDate() {
   let minute = String(date.getMinutes()).padStart(2, "0");
 
   document.querySelector("#date-time").innerHTML = `${day}, ${hour}:${minute}`;
+  colorChange(hour);
 }
 function displayForecast(response) {
   console.log(response.data.daily);
@@ -148,20 +149,22 @@ function changeCity(citySearch) {
 }
 
 function colorChange(hour) {
+  let body = document.querySelector("body");
   if (hour >= 20 || hour <= 6) {
-    document.body.classList.add("night-mode");
-    document.body.classList.remove("sunset");
-  } else if (hour > 6 || hour < 9) {
-    document.body.classList.add("sunrise");
-    document.body.classList.remove("night-mode");
-  } else if (hour >= 9 || hour < 16) {
-    document.body.classList.add("day-mode");
-    document.body.classList.remove("sunrise");
-  } else if (hour >= 16 || hour < 20) {
-    document.body.classList.add("sunset");
-    document.body.classList.remove("day-mode");
+    body.classList.add("night-mode");
+    body.classList.remove("sunset", "sunrise", "day-mode");
+  } else if (hour >= 6 && hour < 9) {
+    body.classList.add("sunrise");
+    body.classList.remove("night-mode", "sunset", "day-mode");
+  } else if (hour >= 9 && hour < 16) {
+    body.classList.add("day-mode");
+    body.classList.remove("night-mode", "sunrise", "sunset");
+  } else if (hour >= 16 && hour < 20) {
+    body.classList.add("sunset");
+    body.classList.remove("night-mode", "sunrise", "day-mode");
   }
 }
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", submitInfo);
 
@@ -170,4 +173,3 @@ currentButton.addEventListener("click", getLocation);
 
 showDate();
 changeCity("Seattle");
-colorChange();
