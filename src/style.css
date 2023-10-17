@@ -1,3 +1,5 @@
+body {
+}
 h1 {
   text-align: center;
   font-size: 3.8em;
@@ -16,7 +18,7 @@ form {
   padding: 20px;
   border-radius: 15px;
   position: fixed;
-  top: 15%;
+  top: 10%;
   left: 35%;
 }
 .content input {
@@ -97,12 +99,30 @@ form {
   font-weight: bold;
   margin-top: 10px;
 }
-#background {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
+.night-mode {
+  background: linear-gradient(
+    114.9deg,
+    rgb(34, 34, 34) 8.3%,
+    rgb(0, 40, 60) 41.6%,
+    rgb(0, 143, 213) 93.4%
+  );
+}
+.day-mode {
+  background: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
+}
+.sunrise {
+  background: radial-gradient(
+    circle at 3.1% 8.2%,
+    rgb(248, 250, 107) 0%,
+    rgb(238, 148, 148) 98.2%
+  );
+}
+.sunset {
+  background: linear-gradient(
+    113.9deg,
+    rgb(255, 7, 7) -4.5%,
+    rgb(255, 255, 5) 98.8%
+  );
 }
 #icon-image {
   width: 100%;

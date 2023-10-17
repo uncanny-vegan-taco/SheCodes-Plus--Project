@@ -147,6 +147,21 @@ function changeCity(citySearch) {
   axios.get(apiUrl).then(showTemp);
 }
 
+function colorChange(hour) {
+  if (hour >= 20 || hour <= 6) {
+    document.body.classList.add("night-mode");
+    document.body.classList.remove("sunset");
+  } else if (hour > 6 || hour < 9) {
+    document.body.classList.add("sunrise");
+    document.body.classList.remove("night-mode");
+  } else if (hour >= 9 || hour < 16) {
+    document.body.classList.add("day-mode");
+    document.body.classList.remove("sunrise");
+  } else if (hour >= 16 || hour < 20) {
+    document.body.classList.add("sunset");
+    document.body.classList.remove("day-mode");
+  }
+}
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", submitInfo);
 
@@ -155,3 +170,4 @@ currentButton.addEventListener("click", getLocation);
 
 showDate();
 changeCity("Seattle");
+colorChange();
