@@ -80,11 +80,6 @@ function showTemp(response) {
       "src",
       `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
     );
-  fahrenheitTemperature = Math.round(response.data.main.temp);
-  highTemperature = Math.round(response.data.main.temp_max);
-  lowTemperature = Math.round(response.data.main.temp_min);
-  feelsLikeTemperature = Math.round(response.data.main.feels_like);
-  windSpeed = Math.round(response.data.wind.speed);
 
   getForecast(response.data.coord);
 }
@@ -152,58 +147,11 @@ function changeCity(citySearch) {
   axios.get(apiUrl).then(showTemp);
 }
 
-function toCelcius(event) {
-  event.preventDefault();
-  let display = document.querySelector("#temp");
-  let high = document.querySelector("#high-temp");
-  let low = document.querySelector("#low-temp");
-  let feelsLike = document.querySelector(".feels-like");
-  let wind = document.querySelector("#wind");
-
-  let newTemp = Math.round((fahrenheitTemperature - 32) * (5 / 9));
-  let newHigh = Math.round((highTemperature - 32) * (5 / 9));
-  let newLow = Math.round((lowTemperature - 32) * (5 / 9));
-  let newFeelsLike = Math.round((feelsLikeTemperature - 32) * (5 / 9));
-  let newWindSpeed = Math.round(windSpeed * 1.60934);
-
-  display.innerHTML = newTemp;
-  high.innerHTML = newHigh;
-  low.innerHTML = newLow;
-  feelsLike.innerHTML = newFeelsLike;
-  wind.innerHTML = newWindSpeed + "kmph";
-}
-
-function toFahrenheit(event) {
-  event.preventDefault();
-  let display = document.querySelector("#temp");
-  let high = document.querySelector("#high-temp");
-  let low = document.querySelector("#low-temp");
-  let feelsLike = document.querySelector(".feels-like");
-  let wind = document.querySelector("#wind");
-  display.innerHTML = Math.round(fahrenheitTemperature);
-  high.innerHTML = Math.round(highTemperature);
-  low.innerHTML = Math.round(lowTemperature);
-  feelsLike.innerHTML = Math.round(feelsLikeTemperature);
-  wind.innerHTML = Math.round(windSpeed) + "mph";
-}
-
-let fahrenheitTemperature = null;
-let highTemperature = null;
-let lowTemperature = null;
-let feelsLikeTemperature = null;
-let windSpeed = null;
-
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", submitInfo);
 
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getLocation);
-
-let celcius = document.querySelector(".c-link");
-celcius.addEventListener("click", toCelcius);
-
-let farenheit = document.querySelector(".f-link");
-farenheit.addEventListener("click", toFahrenheit);
 
 showDate();
 changeCity("Seattle");
