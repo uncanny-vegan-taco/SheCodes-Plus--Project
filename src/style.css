@@ -40,6 +40,8 @@ form {
 }
 .main-temp {
   line-height: 40px;
+  position: relative;
+  right: 30px;
 }
 
 .main-temp h1 {
@@ -101,4 +103,10 @@ form {
   bottom: 0;
   min-width: 100%;
   min-height: 100%;
+}
+#icon-image {
+  width: 100%;
+  position: relative;
+  bottom: 30px;
+  left: 30px;
 }
