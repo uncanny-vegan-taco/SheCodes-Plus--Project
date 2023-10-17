@@ -84,17 +84,19 @@ form {
   font-size: 1.5em;
   margin-bottom: 15px;
 }
-
-.fa-solid {
-  scale: 1.6;
-  text-align: center;
-}
-.col {
-  text-align: center;
-}
 .weather-forecast {
   text-align: center;
-  height: 50px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+.forecast-icon {
+  width: 100%;
+}
+.forecast-temps {
+  font-size: 0.93em;
+}
+.forecast-high {
+  font-weight: bold;
 }
 .open-source {
   text-align: center;
