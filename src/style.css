@@ -19,7 +19,7 @@ form {
   margin: 0 auto;
   margin-top: 100px;
   width: 500px;
-  background-color: rgba(139, 148, 155, 0.685);
+  /*background-color: rgba(139, 148, 155, 0.685);*/
   padding: 20px;
   border-radius: 15px;
 }
@@ -109,13 +109,29 @@ form {
     rgb(0, 143, 213) 93.4%
   );
 }
+
+.content .night-mode {
+  background-color: rgba(160, 160, 160, 0.438);
+  color: #cecece;
+}
+
+h1.night-mode {
+  color: #cecece;
+}
+
 .day-mode {
   background: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
 }
-.content,
-.day-mode {
-  background-color: rgb(211, 34, 34);
+
+.content .day-mode {
+  background-color: rgba(85, 85, 85, 0.438);
+  color: #383838;
 }
+
+h1.day-mode {
+  color: #383838;
+}
+
 .sunrise {
   background: radial-gradient(
     circle at 3.1% 8.2%,
@@ -123,16 +139,16 @@ form {
     rgb(238, 148, 148) 98.2%
   );
 }
-.content,
-.sunrise {
+
+.content .sunrise {
   background-color: rgba(173, 173, 173, 0.397);
   color: rgb(56, 56, 56);
 }
-.main-temp,
-h1,
-.sunrise {
+
+h1.sunrise {
   color: rgb(56, 56, 56);
 }
+
 .sunset {
   background: linear-gradient(
     113.9deg,
