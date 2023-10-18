@@ -110,7 +110,7 @@ form {
   );
 }
 
-.content .night-mode {
+.night-mode.content {
   background-color: rgba(160, 160, 160, 0.438);
   color: #cecece;
 }
@@ -123,7 +123,7 @@ h1.night-mode {
   background: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
 }
 
-.content .day-mode {
+.day-mode.content {
   background-color: rgba(85, 85, 85, 0.438);
   color: #383838;
 }
@@ -140,7 +140,7 @@ h1.day-mode {
   );
 }
 
-.content .sunrise {
+.sunrise .content {
   background-color: rgba(173, 173, 173, 0.397);
   color: rgb(56, 56, 56);
 }
