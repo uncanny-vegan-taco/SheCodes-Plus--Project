@@ -207,7 +207,9 @@ form {
 .sunrise .btn:hover {
   background-color: rgb(133, 133, 133);
 }
-
+.sunrise .fahrenheit {
+  color: rgb(56, 56, 56);
+}
 .sunrise h1 {
   color: rgb(56, 56, 56);
 }
