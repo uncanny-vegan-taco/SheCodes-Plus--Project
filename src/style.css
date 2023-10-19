@@ -111,12 +111,29 @@ form {
 
 .night-mode,
 .night-mode .content {
-  background-color: rgba(228, 228, 228, 0.815);
-  color: #bebebe;
+  background-color: rgba(228, 228, 228, 0.192);
+  color: #dbdbdb;
 }
 
 .night-mode h1 {
-  color: #bebebe;
+  color: #dbdbdb;
+}
+.night-mode .fahrenheit {
+  color: #dbdbdb;
+}
+.night-mode .open-source a {
+  color: #383838;
+}
+.night-mode .btn {
+  border-color: #dbdbdb;
+  color: #dbdbdb;
+}
+.night-mode input {
+  border-color: #dbdbdb;
+}
+.night-mode .btn:hover {
+  background-color: #dbdbdb;
+  color: #383838;
 }
 
 .sunset {
@@ -124,12 +141,24 @@ form {
 }
 .sunset,
 .sunset .content {
-  background-color: rgba(27, 27, 27, 0.397);
+  background-color: rgba(179, 137, 74, 0.185);
   color: rgb(26, 26, 26);
 }
-
+.sunset .fahrenheit {
+  color: rgb(26, 26, 26);
+}
 .sunset h1 {
   color: rgb(26, 26, 26);
+}
+.sunset .btn {
+  border-color: rgb(26, 26, 26);
+  color: rgb(26, 26, 26);
+}
+.sunset .btn:hover {
+  color: #e9e9e9;
+}
+.sunset input {
+  border-color: rgb(26, 26, 26);
 }
 .day-mode {
   background: linear-gradient(
@@ -143,6 +172,9 @@ form {
 .day-mode,
 .day-mode .content {
   background-color: rgba(161, 211, 192, 0.336);
+  color: #383838;
+}
+.day-mode .fahrenheit {
   color: #383838;
 }
 .day-mode h1 {
