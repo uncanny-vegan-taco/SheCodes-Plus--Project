@@ -5,7 +5,6 @@ body {
 h1 {
   text-align: center;
   font-size: 3.8em;
-  color: #212529;
   margin-bottom: 10px;
 }
 h2 {
@@ -17,9 +16,8 @@ form {
 .content {
   display: block;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 85px;
   width: 500px;
-  /*background-color: rgba(139, 148, 155, 0.685);*/
   padding: 20px;
   border-radius: 15px;
 }
@@ -31,6 +29,7 @@ form {
 }
 .btn {
   background-color: transparent;
+  transition: 200ms ease-in-out;
 }
 .btn:hover {
   background-color: #212529;
@@ -101,14 +100,6 @@ form {
   font-weight: bold;
   margin-top: 10px;
 }
-.night-mode {
-  background: linear-gradient(
-    to bottom,
-    rgb(34, 34, 34),
-    rgb(0, 40, 60),
-    rgb(0, 143, 213)
-  );
-}
 
 .night-mode,
 .content {
@@ -129,25 +120,6 @@ form {
   background-color: rgba(85, 85, 85, 0.438);
   color: #383838;
 }
-
-.day-mode h1 {
-  color: #383838;
-}
-
-.sunrise {
-  background: linear-gradient(to top, rgb(248, 250, 107), rgb(238, 148, 148));
-}
-
-.sunrise,
-.content {
-  background-color: rgba(173, 173, 173, 0.397);
-  color: rgb(56, 56, 56);
-}
-
-.sunrise h1 {
-  color: rgb(56, 56, 56);
-}
-
 .sunset {
   background: linear-gradient(to top, rgb(255, 7, 7), rgb(255, 255, 5));
 }
@@ -156,9 +128,43 @@ form {
   background-color: rgba(27, 27, 27, 0.397);
   color: rgb(26, 26, 26);
 }
+/*Listening*/
 .sunset h1 {
   color: rgb(26, 26, 26);
+} /*Listening*/
+.night-mode {
+  background: linear-gradient(
+    to bottom,
+    rgb(34, 34, 34),
+    rgb(0, 40, 60),
+    rgb(0, 143, 213)
+  );
 }
+.day-mode h1 {
+  color: #383838;
+}
+.sunrise {
+  background: linear-gradient(to top, rgb(248, 250, 107), rgb(238, 148, 148));
+}
+
+.sunrise,
+.content {
+  background-color: rgba(197, 103, 103, 0.26);
+  color: rgb(56, 56, 56);
+}
+.sunrise,
+.btn {
+  border-color: rgb(133, 133, 133);
+}
+.sunrise,
+.btn:hover {
+  background-color: rgb(133, 133, 133);
+}
+/*NOT Listening*/
+.sunrise h1 {
+  color: rgb(56, 56, 56);
+}
+/*listening*/
 
 #icon-image {
   width: 100%;
