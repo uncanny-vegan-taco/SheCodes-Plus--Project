@@ -103,58 +103,61 @@ form {
 }
 .night-mode {
   background: linear-gradient(
-    114.9deg,
-    rgb(34, 34, 34) 8.3%,
-    rgb(0, 40, 60) 41.6%,
-    rgb(0, 143, 213) 93.4%
+    to bottom,
+    rgb(34, 34, 34),
+    rgb(0, 40, 60),
+    rgb(0, 143, 213)
   );
 }
 
-.night-mode.content {
-  background-color: rgba(160, 160, 160, 0.438);
-  color: #cecece;
+.night-mode,
+.content {
+  background-color: rgba(228, 228, 228, 0.815);
+  color: #bebebe;
 }
 
-h1.night-mode {
-  color: #cecece;
+.night-mode h1 {
+  color: #bebebe;
 }
 
 .day-mode {
   background: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
 }
 
-.day-mode.content {
+.day-mode,
+.content {
   background-color: rgba(85, 85, 85, 0.438);
   color: #383838;
 }
 
-h1.day-mode {
+.day-mode h1 {
   color: #383838;
 }
 
 .sunrise {
-  background: radial-gradient(
-    circle at 3.1% 8.2%,
-    rgb(248, 250, 107) 0%,
-    rgb(238, 148, 148) 98.2%
-  );
+  background: linear-gradient(to top, rgb(248, 250, 107), rgb(238, 148, 148));
 }
 
-.sunrise .content {
+.sunrise,
+.content {
   background-color: rgba(173, 173, 173, 0.397);
   color: rgb(56, 56, 56);
 }
 
-h1.sunrise {
+.sunrise h1 {
   color: rgb(56, 56, 56);
 }
 
 .sunset {
-  background: linear-gradient(
-    113.9deg,
-    rgb(255, 7, 7) -4.5%,
-    rgb(255, 255, 5) 98.8%
-  );
+  background: linear-gradient(to top, rgb(255, 7, 7), rgb(255, 255, 5));
+}
+.sunset,
+.content {
+  background-color: rgba(27, 27, 27, 0.397);
+  color: rgb(26, 26, 26);
+}
+.sunset h1 {
+  color: rgb(26, 26, 26);
 }
 
 #icon-image {
