@@ -100,6 +100,14 @@ form {
   font-weight: bold;
   margin-top: 10px;
 }
+.night-mode {
+  background: linear-gradient(
+    to bottom,
+    rgb(34, 34, 34),
+    rgb(0, 40, 60),
+    rgb(0, 143, 213)
+  );
+}
 
 .night-mode,
 .content {
@@ -111,15 +119,6 @@ form {
   color: #bebebe;
 }
 
-.day-mode {
-  background: linear-gradient(to top, #c1dfc4 0%, #deecdd 100%);
-}
-
-.day-mode,
-.content {
-  background-color: rgba(85, 85, 85, 0.438);
-  color: #383838;
-}
 .sunset {
   background: linear-gradient(to top, rgb(255, 7, 7), rgb(255, 255, 5));
 }
@@ -128,21 +127,34 @@ form {
   background-color: rgba(27, 27, 27, 0.397);
   color: rgb(26, 26, 26);
 }
-/*Listening*/
+
 .sunset h1 {
   color: rgb(26, 26, 26);
-} /*Listening*/
-.night-mode {
+}
+.day-mode {
   background: linear-gradient(
-    to bottom,
-    rgb(34, 34, 34),
-    rgb(0, 40, 60),
-    rgb(0, 143, 213)
+    to top,
+    rgb(238, 254, 183),
+    rgb(169, 254, 222),
+    rgb(90, 222, 255)
   );
+}
+
+.day-mode,
+.content {
+  background-color: rgba(161, 211, 192, 0.336);
+  color: #383838;
 }
 .day-mode h1 {
   color: #383838;
 }
+.day-mode .btn {
+  border-color: #383838;
+}
+.day-mode .btn:hover {
+  background-color: #383838;
+}
+
 .sunrise {
   background: linear-gradient(to top, rgb(248, 250, 107), rgb(238, 148, 148));
 }
@@ -152,19 +164,16 @@ form {
   background-color: rgba(197, 103, 103, 0.26);
   color: rgb(56, 56, 56);
 }
-.sunrise,
-.btn {
+.sunrise .btn {
   border-color: rgb(133, 133, 133);
 }
-.sunrise,
-.btn:hover {
+.sunrise .btn:hover {
   background-color: rgb(133, 133, 133);
 }
-/*NOT Listening*/
+
 .sunrise h1 {
   color: rgb(56, 56, 56);
 }
-/*listening*/
 
 #icon-image {
   width: 100%;

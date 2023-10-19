@@ -150,13 +150,8 @@ function changeCity(citySearch) {
 
 function colorChange(hour) {
   let body = document.querySelector("body");
-  let content = document.querySelector(".content");
-  if (hour >= 20 || hour <= 6) {
-    body.classList.add("night-mode");
-    content.classList.add("night-mode");
-    body.classList.remove("sunset", "sunrise", "day-mode");
-    content.classList.remove("sunset", "sunrise", "day-mode");
-  } else if (hour >= 6 && hour < 9) {
+
+  if (hour >= 6 && hour < 9) {
     body.classList.add("sunrise");
     body.classList.remove("night-mode", "sunset", "day-mode");
   } else if (hour >= 9 && hour < 16) {
@@ -165,6 +160,9 @@ function colorChange(hour) {
   } else if (hour >= 16 && hour < 20) {
     body.classList.add("sunset");
     body.classList.remove("night-mode", "sunrise", "day-mode");
+  } else if (hour >= 20 || hour <= 6) {
+    body.classList.add("night-mode");
+    body.classList.remove("sunset", "sunrise", "day-mode");
   }
 }
 
