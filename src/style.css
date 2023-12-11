@@ -107,6 +107,7 @@ form {
     rgb(0, 40, 60),
     rgb(0, 143, 213)
   );
+  background-repeat: no-repeat;
 }
 
 .night-mode,
@@ -138,7 +139,9 @@ form {
 
 .sunset {
   background: linear-gradient(to top, rgb(255, 7, 7), rgb(255, 255, 5));
+  background-repeat: no-repeat;
 }
+
 .sunset,
 .sunset .content {
   background-color: rgba(179, 137, 74, 0.185);
@@ -167,6 +170,7 @@ form {
     rgb(169, 254, 222),
     rgb(90, 222, 255)
   );
+  background-repeat: no-repeat;
 }
 
 .day-mode,
@@ -194,6 +198,7 @@ form {
 
 .sunrise {
   background: linear-gradient(to top, rgb(248, 250, 107), rgb(238, 148, 148));
+  background-repeat: no-repeat;
 }
 
 .sunrise,
@@ -222,4 +227,59 @@ form {
 }
 #high-temp {
   font-weight: bolder;
+}
+@media (max-width: 500px) {
+  .content {
+    width: 100%;
+  }
+  .subheader p {
+    font-size: 20px;
+  }
+  .icon {
+    width: 50%;
+  }
+  .main-temp h1 {
+    font-size: 4em;
+  }
+  .fahrenheit {
+    font-size: 1.2em;
+    position: relative;
+    bottom: 90px;
+    left: 110px;
+  }
+  .col-6 {
+    height: 100px;
+  }
+  .col-2 {
+    padding: 0;
+  }
+  .btn {
+    font-size: 12px;
+  }
+  .description,
+  .info {
+    font-size: 18px;
+  }
+  .weather-forecast {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .small {
+    padding: 0;
+  }
+  .open-source {
+    font-size: 12px;
+  }
+  #search-form {
+    max-width: 350px;
+    padding: 0px;
+  }
+  #search-form,
+  #city-input {
+    font-size: 12px;
+  }
+  #city {
+    font-size: 40px;
+  }
 }
